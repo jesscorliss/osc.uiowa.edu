@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OSC Social Unit feature.
+ */
+
+include_once 'osc_social_unit.features.inc';

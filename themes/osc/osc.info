@@ -1,0 +1,14 @@
+name = Office of Strategic Communication
+description = Custom styles for the Office of Strategic Communication web site
+screenshot  = screenshot.png
+core = 7.x
+base theme = stellar
+stylesheets[all][]     = osc.css
+regions[sidebar] = Sidebar
+regions[branding] = Branding
+regions[header] = Header
+regions[navigation] = Navigation
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[footer] = Footer
