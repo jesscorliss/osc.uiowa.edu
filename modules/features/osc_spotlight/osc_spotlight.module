@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OSC Spotlight feature.
+ */
+
+include_once 'osc_spotlight.features.inc';

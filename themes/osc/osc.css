@@ -1,8 +1,46 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic);
 
+/* Remove background image pattern */
+
 .pattern:after{
 	background-image: none;
 }
+
+/* View for spotlight items */
+
+#block-views-spotlights-spotlight-block .view-content{
+	display: flex;
+	justify-content: space-around;
+}
+
+#block-views-spotlights-spotlight-block .views-row{
+	max-width: 340px;
+	background-color: #F8F8F8;
+	position: relative;
+	border-top: 3px solid #FCD116;
+}
+
+#block-views-spotlights-spotlight-block .views-row .views-field-title{
+	position: absolute;
+	top: 80px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+#block-views-spotlights-spotlight-block .views-row .views-field-title a{
+	background-color: #000000BB;
+	padding: 3px 10px;
+	font-size: 1.6em;
+	font-weight: 600;
+	color: #FCD116;
+}
+
+#block-views-spotlights-spotlight-block .views-row .views-field-field-spotlight-description{
+	padding: 10px;
+	line-height: 1.6em;
+}
+/* View for social units */
 
 #block-views-social-units-block .views-row{
 	padding: 5px 10px;
