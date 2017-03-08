@@ -14,9 +14,21 @@
 
 #block-osc-photoshelter-photoshelter .slider {
 	position: relative;
-	max-width: 800px;
+	max-width: 600px;
 	text-align: center;
 	margin: 0 auto;
+}
+
+#block-osc-photoshelter-photoshelter .flex-direction-nav a{
+	opacity: 1;
+}
+
+#block-osc-photoshelter-photoshelter .flex-direction-nav a:before{
+	font-size: 30px;
+}
+
+#block-osc-photoshelter-photoshelter .flex-direction-nav .flex-next{
+	right: -40px;
 }
 
 /* View for spotlight items */

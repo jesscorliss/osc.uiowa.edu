@@ -56,7 +56,7 @@ function osc_photoshelter_block_view($delta = '') {
 		    	$image_data_request = "https://www.photoshelter.com/psapi/v3/mem/image/".$image['image_id']."/iptc?auth_token=hCGeQQzefO6zYZ2gZseWUMJH&api_key=VL2QfVIzu68";
 		    	$decode_content = drupal_http_request($image_data_request);
 		    	$decode_array = drupal_json_decode($decode_content->data);
-		    	$images .= '<li><img src="'.$image_link.'" alt="'.$decode_array['data']['Iptc']['caption'].'"/><p class="flex-caption">'.$decode_array['data']['Iptc']['caption'].'</p></li>';
+		    	$images .= '<li><img src="'.$image_link.'" alt="'.$decode_array['data']['Iptc']['caption'].'"/></li>';
 		    }
 
 			$block['subject'] = NULL;
