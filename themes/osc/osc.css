@@ -10,6 +10,15 @@
 	min-height: 0;
 }
 
+/* Custom block for photoshelter slider */
+
+#block-osc-photoshelter-photoshelter .slider {
+	position: relative;
+	max-width: 800px;
+	text-align: center;
+	margin: 0 auto;
+}
+
 /* View for spotlight items */
 
 #block-views-spotlights-spotlight-block .view-content{

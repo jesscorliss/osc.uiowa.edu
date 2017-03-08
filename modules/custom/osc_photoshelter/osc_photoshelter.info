@@ -1,0 +1,7 @@
+name = OSC Photoshelter
+description = Provides a display of images from a Photoshelter gallery
+core = 7.x
+version = 7.x-1.0
+package = OSC
+dependencies[] = libraries
+dependencies[] = flexslider

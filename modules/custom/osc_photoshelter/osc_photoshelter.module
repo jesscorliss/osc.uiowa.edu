@@ -1,0 +1,68 @@
+<?php
+
+function osc_photoshelter_requirements($phase) {
+  $requirements = array();
+  // Ensure translations do not break at install time
+  $t = get_t();
+
+  $requirements['slick'] = array(
+    'title' => $t('Slick Library'),
+  );
+
+  $libraries = libraries_get_libraries();
+  if (isset($libraries['slick'])) {
+    $requirements['slick']['value'] = $t('Installed');
+    $requirements['slick']['severity'] = REQUIREMENT_OK;
+  }
+  else {
+    $requirements['slick']['value'] = $t('Not Installed');
+    $requirements['slick']['severity'] = REQUIREMENT_ERROR;
+    $requirements['slick']['description'] = $t('Please install the example library %url.', array('%url' => 'http://example.com'));
+  }
+
+  return $requirements;
+}
+
+function osc_photoshelter_block_info() {
+  // This example comes from node.module.
+  $blocks['photoshelter'] = array(
+    'info' => t('PhotoShelter Gallery'), 
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+function osc_photoshelter_block_view($delta = '') {
+	// This example is adapted from node.module.
+	$block = array();
+
+	switch ($delta) {
+		case 'photoshelter':
+			
+			libraries_load('flexslider');
+			drupal_add_js('/sites/osc.uiowa.edu/modules/custom/osc_photoshelter/slider.js');
+			$images = '';
+			$url = "https://www.photoshelter.com/psapi/v3/mem/gallery/G00000lbaZPzzNKA/images?auth_token=hCGeQQzefO6zYZ2gZseWUMJH&api_key=VL2QfVIzu68";
+		    $decode_content = drupal_http_request($url);
+		    $decode_array = drupal_json_decode($decode_content->data);
+		    $results = $decode_array;
+
+		    foreach($results['data']['GalleryImage'] as $image){
+		    	$image_request = "https://www.photoshelter.com/psapi/v3/mem/image/".$image['image_id']."/link?auth_token=hCGeQQzefO6zYZ2gZseWUMJH&api_key=VL2QfVIzu68";
+		    	$decode_content = drupal_http_request($image_request);
+		    	$decode_array = drupal_json_decode($decode_content->data);
+		    	$image_link = str_replace("500x500","3000x400", $decode_array['data']['ImageLink']['link']);
+		    	$image_data_request = "https://www.photoshelter.com/psapi/v3/mem/image/".$image['image_id']."/iptc?auth_token=hCGeQQzefO6zYZ2gZseWUMJH&api_key=VL2QfVIzu68";
+		    	$decode_content = drupal_http_request($image_data_request);
+		    	$decode_array = drupal_json_decode($decode_content->data);
+		    	$images .= '<li><img src="'.$image_link.'" alt="'.$decode_array['data']['Iptc']['caption'].'"/><p class="flex-caption">'.$decode_array['data']['Iptc']['caption'].'</p></li>';
+		    }
+
+			$block['subject'] = NULL;
+			$block['content'] = t('<div class="slider"><ul class="slides">'.$images.'</ul></div>');
+		break;
+	}
+
+	return $block;
+}
