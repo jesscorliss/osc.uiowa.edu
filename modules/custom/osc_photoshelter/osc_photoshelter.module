@@ -43,17 +43,17 @@ function osc_photoshelter_block_view($delta = '') {
 			libraries_load('flexslider');
 			drupal_add_js('/sites/osc.uiowa.edu/modules/custom/osc_photoshelter/slider.js');
 			$images = '';
-			$url = "https://www.photoshelter.com/psapi/v3/mem/gallery/G00000lbaZPzzNKA/images?auth_token=hCGeQQzefO6zYZ2gZseWUMJH&api_key=VL2QfVIzu68";
+			$url = "https://www.photoshelter.com/psapi/v3/mem/gallery/G000061W6aypB5WA/images?auth_token=ZRz6s2ABSJZ.aVtA6cS9q18w&api_key=VL2QfVIzu68";
 		    $decode_content = drupal_http_request($url);
 		    $decode_array = drupal_json_decode($decode_content->data);
 		    $results = $decode_array;
 
 		    foreach($results['data']['GalleryImage'] as $image){
-		    	$image_request = "https://www.photoshelter.com/psapi/v3/mem/image/".$image['image_id']."/link?auth_token=hCGeQQzefO6zYZ2gZseWUMJH&api_key=VL2QfVIzu68";
+		    	$image_request = "https://www.photoshelter.com/psapi/v3/mem/image/".$image['image_id']."/link?auth_token=ZRz6s2ABSJZ.aVtA6cS9q18w&api_key=VL2QfVIzu68";
 		    	$decode_content = drupal_http_request($image_request);
 		    	$decode_array = drupal_json_decode($decode_content->data);
 		    	$image_link = str_replace("500x500","3000x400", $decode_array['data']['ImageLink']['link']);
-		    	$image_data_request = "https://www.photoshelter.com/psapi/v3/mem/image/".$image['image_id']."/iptc?auth_token=hCGeQQzefO6zYZ2gZseWUMJH&api_key=VL2QfVIzu68";
+		    	$image_data_request = "https://www.photoshelter.com/psapi/v3/mem/image/".$image['image_id']."/iptc?auth_token=ZRz6s2ABSJZ.aVtA6cS9q18&api_key=VL2QfVIzu68";
 		    	$decode_content = drupal_http_request($image_data_request);
 		    	$decode_array = drupal_json_decode($decode_content->data);
 		    	$images .= '<li><img src="'.$image_link.'" alt="'.$decode_array['data']['Iptc']['caption'].'"/></li>';
