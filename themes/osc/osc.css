@@ -13,7 +13,7 @@
 -moz-box-shadow: none;
 -webkit-box-shadow: none;
 box-shadow: none;
-background-color: #514f50;
+background-color:rgba(0, 0, 0, 0.5);
 border: none;
 color: #fff;
 padding-top: 2rem;
@@ -27,11 +27,13 @@ padding-bottom: 2rem;
 }
 
 .l-header.bg-image{
-	min-height: 470px;
+min-height: 470px;
+background-position: initial;
 }
 
 .bg-image {
 margin-top: -150px;
+background-color: #000;
 }
 
 /* Background adjustments */
