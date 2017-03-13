@@ -1,4 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic);
+/* Site Name Styling */
+.l-navigation .l-branding .site-name a {
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    line-height: 32px;
+}
+
 /* Title Bar Color */
 
 .l-title-bar {
@@ -19,7 +27,7 @@ padding-bottom: 2rem;
 }
 
 .l-header.bg-image{
-	min-height: 300px;
+	min-height: 470px;
 }
 
 .bg-image {
@@ -135,9 +143,16 @@ background: #000;
 box-shadow: none;
 position: relative;
 z-index: 1;
-background: #222222;
+background: #000;
+background-color: rgba(0, 0, 0, 0.7)
 padding: 1rem 0;
 color: #fcd116;
 border: 0px;
-opacity: .8;
+}
+
+/* Footer */
+
+.l-footer {
+background: #000;
+border: none;
 }
