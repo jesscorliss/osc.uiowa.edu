@@ -1,4 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic);
+/* Title Bar Color */
+
+.l-title-bar {
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+box-shadow: none;
+background-color: #514f50;
+border: none;
+color: #fff;
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
 
 /* Remove background image pattern */
 
@@ -7,7 +19,26 @@
 }
 
 .l-header.bg-image{
-	min-height: 0;
+	min-height: 300px;
+}
+
+.bg-image {
+margin-top: -150px;
+}
+
+/* Background adjustments */
+
+.l-header {
+border-bottom: none;
+min-height: 0;
+overflow: hidden;
+background-color: #000;
+}
+
+body {
+font-size: 1.6em;
+color: #000;
+background: #000;
 }
 
 /* Custom block for photoshelter slider */
@@ -94,4 +125,19 @@
 	list-style-type: none;
 	width: 50px;
 	font-size: 2rem;
+}
+
+/* Navigation */
+.l-navigation {
+
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+box-shadow: none;
+position: relative;
+z-index: 1;
+background: #222222;
+padding: 1rem 0;
+color: #fcd116;
+border: 0px;
+opacity: .8;
 }
