@@ -13,7 +13,7 @@
 -moz-box-shadow: none;
 -webkit-box-shadow: none;
 box-shadow: none;
-background-color:rgba(0, 0, 0, 0.5);
+background-color: #414141);
 border: none;
 color: #fff;
 padding-top: 2rem;
@@ -27,12 +27,12 @@ padding-bottom: 2rem;
 }
 
 .l-header.bg-image{
-min-height: 470px;
+min-height: 430px;
 background-position: initial;
 }
 
 .bg-image {
-margin-top: -150px;
+margin-top: -90px;
 background-color: #000;
 }
 
@@ -42,7 +42,7 @@ background-color: #000;
 border-bottom: none;
 min-height: 0;
 overflow: hidden;
-background-color: #000;
+background-color:rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -95,7 +95,7 @@ background: #000;
 }
 
 #block-views-spotlights-spotlight-block .views-row .views-field-title a{
-	background-color: #000000BB;
+	background-color: #000000;
 	padding: 3px 10px;
 	font-size: 1.6em;
 	font-weight: 600;
@@ -146,7 +146,7 @@ box-shadow: none;
 position: relative;
 z-index: 1;
 background: #000;
-background-color: rgba(0, 0, 0, 0.7)
+background-color: rgba(0, 0, 0, 0.7);
 padding: 1rem 0;
 color: #fcd116;
 border: 0px;
@@ -157,4 +157,11 @@ border: 0px;
 .l-footer {
 background: #000;
 border: none;
+}
+
+/* Responsive  */
+@media (max-width: 1140px) {
+    .bg-image {
+        display: none;
+    }
 }
